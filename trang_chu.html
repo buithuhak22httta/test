@@ -1,0 +1,185 @@
+<html>
+<head>
+	<title>Trang chủ | Khoa ITDE (Information Technology & Digital Economics)</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript">
+	//Hien thi hop thoai chao mung
+		window.alert("Welcome to my website");
+
+		//In du lieu len webpage
+		document.write("Toi ten la: Bui Thu Ha <br>");
+		document.write("Lop: K22HTTTA");
+
+		//In du lieu an phuc vu FIXBUGS
+			console.log("Sang mai dc k?");
+		console.log("Ok nho");
+
+		//Xu ly khai bao bien, gan gia tri cho bie, doi gt cua bien
+		var ho_ten;
+		document.write("<br>Bien ho_ten ban dau co gia tri: "+ho_ten);
+		ho_ten="Bui Thu Ha"
+		document.write("<br>Bien ho_ten sau khi gan co gia tri: "+ho_ten);
+		ho_ten=19+"- 22A4040011 - "+ho_ten;
+		document.write("<br>Bien ho_ten sau khi bien doi co gia tri: "+ho_ten);
+
+		//Bien doi gia tri cua mot bien dang so
+		var x=21;
+		document.write("<br>x = "+x);
+		x=x+5;
+		document.write("<br>x = "+x);
+		x+=3;
+		document.write("<br>x = "+x);
+
+		//Thử câu lệnh rẽ nhánh
+		if(x>=24)
+		{
+			document.write("<br> Ban da truong thanh");
+		}
+		else
+		{
+			document.write("<br> Ban van dang phu thuoc gia dinh");
+		}
+		if(x>30)
+		{
+			document.write("<br> Ban se bi phat neu nhu chua ket hon");
+		}
+		for (var i = 1; i <= 8; i++) {
+			if(i==5)
+			{
+				break;
+			}
+			document.write("<br> Tuan hoc online thu "+i);
+		}
+
+		//Thu nghiem ham doc so thanh chu
+		function doi_so_thanh_Chu(so)
+		{
+			var ket_qua;
+			if(so==0)
+			{
+				ket_qua="Khong";
+			}
+			if(so==1)
+			{
+				ket_qua="Mot";
+			}
+			if(so==2)
+			{
+				ket_qua="Hai";
+			}
+			if(so==3)
+			{
+				ket_qua="Ba";
+			}
+			if(so==4)
+			{
+				ket_qua="Bon";
+			}
+			if(so==5)
+			{
+				ket_qua="Nam";
+			}
+			if(so==6)
+			{
+				ket_qua="Sau";
+			}
+			if(so==7)
+			{
+				ket_qua="Bay";
+			}
+			if(so==8)
+			{
+				ket_qua="Tam";
+			}
+			if(so==9)
+			{
+				ket_qua="Chin";
+			}
+			return ket_qua;
+		}
+		document.write("<br> So 1 dang chu = "+doi_so_thanh_Chu(1));
+		document.write("<br> So 2 dang chu = "+doi_so_thanh_Chu(2));
+		document.write("<br> So 3 dang chu = "+doi_so_thanh_Chu(3));
+		document.write("<br> So 4 dang chu = "+doi_so_thanh_Chu(4));
+		document.write("<br> So 5 dang chu = "+doi_so_thanh_Chu(5));
+
+		//Nhap vao mot so toi da hai chu so; sau do in chu
+		function so_hai_chu_so (so)
+		{
+			if(so<=9)
+				document.write("<br> Dang chu: "+doi_so_thanh_Chu(so));
+			else if(so==10)
+			{
+				document.write("<br> Dang chu: Muoi");
+			}
+			
+			else if (so<=19)
+				document.write("<br> Dang chu: Muoi " + doi_so_thanh_Chu(so%10));
+			else if(so>=20 && so<=99)
+			{
+				if(so%10==0)
+				{
+					document.write("<br>"+doi_so_thanh_Chu(Math.floor(so/10))+" muoi");
+				}
+				else
+				document.write("<br> Dang chu: "+doi_so_thanh_Chu(Math.floor(so/10))+" "+doi_so_thanh_Chu(so%10));
+			}
+
+		}
+
+		function xu_ly_so_bat_ky(so)
+		{
+			if(so<10)
+			{
+				document.write("<br>"+doi_so_thanh_Chu(so));
+			}
+			else
+			{
+				var don_vi;
+				don_vi=so%10;
+				var chuc;
+				chuc=(so-don_vi)/10;
+				document.write("<br>" + doi_so_thanh_Chu(chuc)+" "+doi_so_thanh_Chu(don_vi));
+			}
+		}
+		so_hai_chu_so(10);
+		so_hai_chu_so(20);
+		so_hai_chu_so(12);
+		so_hai_chu_so(25);
+		so_hai_chu_so(2);
+		xu_ly_so_bat_ky(24);
+		xu_ly_so_bat_ky(15);
+		xu_ly_so_bat_ky(2);
+
+		//Mo ta doi tuong xe hoi (MAZDA 3; Do, 1.500 kg, nam sx 2021)
+		var xe_hoi={hang_xe:"Mazda", dong_xe:"Mazda 3", mau_sac:"Do", trong_luong:"1.500 kg", nam_san_xuat:"2021"};
+
+		// Truy cap den thuoc tinh 
+		document.write("<br>Hang xe: "+xe_hoi.hang_xe);
+		document.write("<br>Dong xe: "+xe_hoi.dong_xe);
+		document.write("<br>Mau sac: "+xe_hoi.mau_sac);
+		document.write("<br>Trong luong: "+xe_hoi["trong_luong"]);
+		document.write("<br>Nam san xuat: "+xe_hoi["nam_san_xuat"]);
+
+		// Mo ta mot mang sinh vien xuat sac cua lop K22 HTTTA
+		var sinh_vien = ["Nguyen Phuong A", "Trinh Minh H", "Nguyen Ngoc A", "Tran Thu T", "Tran Duc T"];
+		document.write("<br>1. Ban "+sinh_vien[0]);
+		document.write("<br>2. Ban "+sinh_vien[1]);
+		document.write("<br>3. Ban "+sinh_vien[2]);
+		document.write("<br>4. Ban "+sinh_vien[3]);
+		document.write("<br>5. Ban "+sinh_vien[4]);
+
+	</script>
+
+</head>
+
+<body>
+
+	<h3><a href="trang_chu.html">TRANG CHỦ</a> |<a href="gioi_thieu.html"> GIỚI THIỆU</a> |<a href="tin_tuc.html"> TIN TỨC</a> |<a href="san_pham.html"> SẢN PHẨM</a> |<a href="lien_he.html"> LIÊN HỆ</a></h3>
+	<hr>
+	<h3 id="tieu_de_chinh">TRANG CHỦ</h3>
+	<p style="text-align: center;"><button onclick="document.getElementById('tieu_de_chinh').innerHTML='----- HOME PAGE -----'">Sua thong tin</button></p>
+	<p style="text-align: center;"><img src="img/thumb_20210821_diep_ap_1.jpg"></p>
+	<script type="text/javascript" src="js/home.js"></script>
+</body>
+</html>
